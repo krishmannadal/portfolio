@@ -9,7 +9,7 @@ export const FooterContact: React.FC = () => {
   const [copied, setCopied] = useState(false);
   const { openResume } = useResume();
 
-  const cloneCommand = "git clone https://github.com/Krishna-Mandal/mini-r1.git";
+  const cloneCommand = "git clone https://github.com/krishmannadal/mini-r1.git";
 
   const handleCopy = () => {
     navigator.clipboard.writeText(cloneCommand);
@@ -44,7 +44,7 @@ export const FooterContact: React.FC = () => {
               </a>
 
               <a
-                href="https://github.com/Krishna-Mandal"
+                href="https://github.com/krishmannadal"
                 target="_blank"
                 rel="noopener noreferrer me"
                 className="inline-flex items-center space-x-2 px-4 py-2.5 rounded-full bg-[var(--surface-elevated)] hover:bg-[var(--accent-wash)] border border-[var(--border)] hover:border-[var(--accent)] text-[var(--text-primary)] transition-all font-semibold"

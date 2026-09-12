@@ -83,9 +83,9 @@ export const ResumeModal: React.FC<ResumeModalProps> = ({ isOpen, onClose }) => 
                 <MapPin className="w-3.5 h-3.5 text-[var(--accent-emerald)]" />
                 Mumbai, India
               </span>
-              <a href="https://github.com/Krishna-Mandal" target="_blank" rel="noopener noreferrer me" className="flex items-center gap-1 hover:text-[var(--accent)]">
+              <a href="https://github.com/krishmannadal" target="_blank" rel="noopener noreferrer me" className="flex items-center gap-1 hover:text-[var(--accent)]">
                 <GithubIcon className="w-3.5 h-3.5 text-[var(--text-subtle)]" />
-                github.com/Krishna-Mandal
+                github.com/krishmannadal
               </a>
               <a href="https://linkedin.com/in/krishnakumarmandal" target="_blank" rel="noopener noreferrer me" className="flex items-center gap-1 hover:text-[var(--accent)]">
                 <LinkedinIcon className="w-3.5 h-3.5 text-[var(--accent)]" />

@@ -99,7 +99,7 @@ export const TelemetryNav: React.FC<TelemetryNavProps> = ({ onOpenResume }) => {
             </button>
 
             <a
-              href="https://github.com/Krishna-Mandal"
+              href="https://github.com/krishmannadal"
               target="_blank"
               rel="noopener noreferrer me"
               className="hidden sm:inline-flex items-center space-x-1.5 px-3 py-1.5 sm:py-2 rounded-full bg-[var(--surface-subtle)] border border-[var(--border)] hover:border-[var(--accent)] text-xs font-semibold text-[var(--text-primary)] transition-all"

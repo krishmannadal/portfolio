@@ -11,7 +11,7 @@ export const LabDock: React.FC<LabDockProps> = ({ onOpenResume }) => {
   const [isOpen, setIsOpen] = useState(false);
   const [copied, setCopied] = useState(false);
 
-  const cloneCommand = "git clone https://github.com/Krishna-Mandal/mini-r1.git";
+  const cloneCommand = "git clone https://github.com/krishmannadal/mini-r1.git";
 
   const handleCopy = () => {
     navigator.clipboard.writeText(cloneCommand);

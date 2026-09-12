@@ -35,7 +35,7 @@ export const MiniR1Dossier: React.FC = () => {
 
           <div className="flex items-center space-x-3 shrink-0">
             <a
-              href="https://github.com/Krishna-Mandal/mini-r1"
+              href="https://github.com/krishmannadal/mini-r1"
               target="_blank"
               rel="noopener noreferrer"
               className="inline-flex items-center space-x-2 px-4 py-2 rounded-full bg-[var(--surface-elevated)] hover:bg-[var(--accent-wash)] border border-[var(--border)] hover:border-[var(--accent)] text-xs font-code text-[var(--text-primary)] transition-all"

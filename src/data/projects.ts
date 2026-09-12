@@ -60,7 +60,7 @@ export const PROJECTS: ProjectSection[] = [
     hardware: "1x NVIDIA GeForce RTX 4050 Laptop GPU (6 GB VRAM)",
     role: "Sole Model Architect & Experimenter",
     timeline: "2024–2025",
-    githubUrl: "https://github.com/Krishna-Mandal/mini-r1",
+    githubUrl: "https://github.com/krishmannadal/mini-r1",
     reportUrl: "#audit-section",
     tags: ["PyTorch", "Custom Transformer", "SentencePiece", "CUDA", "Continual Learning", "Leakage Audit"],
     metrics: [
@@ -152,7 +152,7 @@ export const PROJECTS: ProjectSection[] = [
     hardware: "Local Linux / WSL2 CPU & GPU testbed",
     role: "System Designer & Implementer",
     timeline: "2025",
-    githubUrl: "https://github.com/Krishna-Mandal/nullius",
+    githubUrl: "https://github.com/krishmannadal/nullius",
     tags: ["Evaluation Methodology", "Information Retrieval", "BM25", "Dense Vectors", "Null Baselines", "Contract Testing"],
     metrics: [
       { label: "Pipeline Stages", value: "6 Discrete Steps", subtext: "Response → Claim → Retrieval → Rerank → Verify → Aggregate" },
@@ -209,7 +209,7 @@ export const PROJECTS: ProjectSection[] = [
     hardware: "Linux / WSL2 Dockerized Testbed",
     role: "Platform Engineer & System Architect",
     timeline: "2025–Present",
-    githubUrl: "https://github.com/Krishna-Mandal/privatetune",
+    githubUrl: "https://github.com/krishmannadal/privatetune",
     tags: ["vLLM", "LoRA / QLoRA", "MLflow", "Docker Compose", "FastAPI", "Reproducibility"],
     metrics: [
       { label: "Architecture", value: "Multi-Tenant LoRA", subtext: "Single shared base model weights in VRAM" },
@@ -265,7 +265,7 @@ export const PROJECTS: ProjectSection[] = [
     hardware: "Python / NetworkX / LightGBM Benchmark",
     role: "ML Researcher & Pipeline Engineer",
     timeline: "2024",
-    githubUrl: "https://github.com/Krishna-Mandal/merchant-ring",
+    githubUrl: "https://github.com/krishmannadal/merchant-ring",
     tags: ["Graph Features", "LightGBM", "Fraud Detection", "PR-AUC", "Temporal Split", "Cost Sensitivity"],
     metrics: [
       { label: "PR-AUC (Baseline)", value: "0.6228", subtext: "Isolated per-application tabular features" },
@@ -321,7 +321,7 @@ export const PROJECTS: ProjectSection[] = [
     hardware: "PyTorch GPU Mixed Precision Pipeline",
     role: "ML Researcher & Pipeline Developer",
     timeline: "2025–2026",
-    githubUrl: "https://github.com/Krishna-Mandal/exxa2-morphology",
+    githubUrl: "https://github.com/krishmannadal/exxa2-morphology",
     tags: ["Autoencoder", "UMAP", "HDBSCAN", "FITS Astronomy", "MS-SSIM", "Unsupervised"],
     metrics: [
       { label: "Morphological Clusters", value: "4 Clusters", subtext: "Identified in synthetic benchmark" },
@@ -377,7 +377,7 @@ export const PROJECTS: ProjectSection[] = [
     hardware: "Vercel / Supabase PostgreSQL / Execution Sandbox",
     role: "Full-Stack Architect & Lead Developer",
     timeline: "2024",
-    githubUrl: "https://github.com/Krishna-Mandal/wecode",
+    githubUrl: "https://github.com/krishmannadal/wecode",
     demoUrl: "https://wecode-platform.vercel.app",
     tags: ["Next.js", "TypeScript", "PostgreSQL", "Prisma", "Tailwind", "Gemini API", "Code Sandbox"],
     metrics: [
@@ -428,7 +428,7 @@ export const PROJECTS: ProjectSection[] = [
     description: "Engineered with responsive React, customizable nutrition intervals, dark/light visual modes, and instant cross-device state synchronization.",
     role: "Frontend Developer",
     timeline: "2024",
-    githubUrl: "https://github.com/Krishna-Mandal/time2eat",
+    githubUrl: "https://github.com/krishmannadal/time2eat",
     demoUrl: "https://time2eat.vercel.app",
     tags: ["React", "State Management", "Tailwind CSS", "Local Storage", "Responsive UI"],
     metrics: [
