@@ -1,26 +1,459 @@
 @import "tailwindcss";
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
+@theme {
+  --color-accent: var(--accent);
+  --color-accent-hover: var(--accent-hover);
+  --color-accent-fill: var(--accent-fill);
+  --color-accent-contrast: var(--accent-contrast);
+  --color-accent-soft: var(--accent-soft);
+  --color-accent-wash: var(--accent-wash);
+  --color-accent-amber: var(--accent-amber);
+  --color-accent-emerald: var(--accent-emerald);
+  --color-accent-crimson: var(--accent-crimson);
+  --color-accent-violet: var(--accent-violet);
+  --color-surface-page: var(--surface-page);
+  --color-surface-subtle: var(--surface-subtle);
+  --color-surface-elevated: var(--surface-elevated);
+  --color-surface-inset: var(--surface-inset);
+  --color-surface-overlay: var(--surface-overlay);
+  --color-text-primary: var(--text-primary);
+  --color-text-muted: var(--text-muted);
+  --color-text-subtle: var(--text-subtle);
+  --color-border-subtle: var(--border);
+  --color-border-strong: var(--border-strong);
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
-
-@media (prefers-color-scheme: dark) {
+@layer base {
   :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+    /* Vilendesign Color Science & Tokens */
+    --font-display: "Figtree", system-ui, -apple-system, sans-serif;
+    --font-body: "Figtree", system-ui, -apple-system, sans-serif;
+    --font-code: "JetBrains Mono", ui-monospace, SFMono-Regular, Menlo, monospace;
+
+    /* Dark Mode Tokens (Default) */
+    --surface-page: #08090d;
+    --surface-subtle: #0e1118;
+    --surface-elevated: #141822;
+    --surface-inset: #050608;
+    --surface-overlay: #1a202c;
+
+    --text-primary: #f0f4f8;
+    --text-muted: #94a3b8;
+    --text-subtle: #64748b;
+
+    --border: rgba(255, 255, 255, 0.1);
+    --border-strong: rgba(255, 255, 255, 0.18);
+    --ui-hairline: rgba(255, 255, 255, 0.08);
+
+    /* Vilendesign Azure & Semantic Accents */
+    --accent: #38bdf8;
+    --accent-hover: #0284c7;
+    --accent-fill: #38bdf8;
+    --accent-contrast: #08090d;
+    --accent-soft: rgba(56, 189, 248, 0.15);
+    --accent-wash: rgba(56, 189, 248, 0.06);
+
+    --accent-amber: #f59e0b;
+    --accent-emerald: #10b981;
+    --accent-crimson: #ef4444;
+    --accent-violet: #a855f7;
+
+    /* RGB triplets for rock-solid alpha compositing */
+    --accent-rgb: 56, 189, 248;
+    --accent-amber-rgb: 245, 158, 11;
+    --accent-emerald-rgb: 16, 185, 129;
+    --accent-crimson-rgb: 239, 68, 68;
+    --accent-violet-rgb: 168, 85, 247;
+
+    /* Glass System */
+    --glass-tint: rgba(20, 24, 34, 0.65);
+    --glass-tint-strong: rgba(14, 17, 24, 0.85);
+    --glass-border: rgba(255, 255, 255, 0.12);
+    --glass-highlight: rgba(255, 255, 255, 0.25);
+    --glass-shadow: 0 12px 36px rgba(0, 0, 0, 0.6), 0 2px 8px rgba(0, 0, 0, 0.4);
+    --glass-inner: inset 0 1px 0 rgba(255, 255, 255, 0.15);
+
+    /* Squircles & Radii */
+    --radius-sm: 8px;
+    --radius-md: 14px;
+    --radius-lg: 24px;
+    --radius-xl: 32px;
+    --radius-full: 999px;
+  }
+
+  [data-theme="light"] {
+    --surface-page: #f8fafc;
+    --surface-subtle: #f1f5f9;
+    --surface-elevated: #ffffff;
+    --surface-inset: #e2e8f0;
+    --surface-overlay: #ffffff;
+
+    --text-primary: #0f172a;
+    --text-muted: #475569;
+    --text-subtle: #64748b;
+
+    --border: rgba(15, 23, 42, 0.08);
+    --border-strong: rgba(15, 23, 42, 0.16);
+    --ui-hairline: rgba(15, 23, 42, 0.05);
+
+    --accent: #0284c7;
+    --accent-hover: #0369a1;
+    --accent-fill: #0284c7;
+    --accent-contrast: #ffffff;
+    --accent-soft: rgba(2, 132, 199, 0.12);
+    --accent-wash: rgba(2, 132, 199, 0.05);
+
+    --accent-amber: #d97706;
+    --accent-emerald: #059669;
+    --accent-crimson: #dc2626;
+    --accent-violet: #9333ea;
+
+    --accent-rgb: 2, 132, 199;
+    --accent-amber-rgb: 217, 119, 6;
+    --accent-emerald-rgb: 5, 150, 105;
+    --accent-crimson-rgb: 220, 38, 38;
+    --accent-violet-rgb: 147, 51, 234;
+
+    --glass-tint: rgba(255, 255, 255, 0.7);
+    --glass-tint-strong: rgba(255, 255, 255, 0.9);
+    --glass-border: rgba(15, 23, 42, 0.1);
+    --glass-highlight: rgba(255, 255, 255, 0.95);
+    --glass-shadow: 0 12px 36px rgba(15, 23, 42, 0.08), 0 2px 8px rgba(15, 23, 42, 0.04);
+    --glass-inner: inset 0 1px 0 rgba(255, 255, 255, 0.8);
+  }
+
+  html {
+    scroll-behavior: smooth;
+    font-family: var(--font-body);
+  }
+
+  body {
+    background-color: var(--surface-page);
+    color: var(--text-primary);
+    font-family: var(--font-body);
+    overflow-x: hidden;
+    transition: background-color 0.3s ease, color 0.3s ease;
+  }
+
+  ::selection {
+    background: var(--accent);
+    color: var(--accent-contrast);
   }
 }
 
-body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+/* Typography styles */
+.font-display {
+  font-family: var(--font-display);
+}
+
+.font-telemetry, .font-code {
+  font-family: var(--font-code);
+}
+
+/* Vilendesign Command Eyebrow */
+.eyebrow-cmd {
+  font-family: var(--font-code);
+  font-size: 11px;
+  font-weight: 500;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+  display: inline-flex;
+  align-items: center;
+}
+
+.eyebrow-cmd::before {
+  content: "/";
+  color: var(--accent);
+  font-weight: 700;
+  margin-right: 0.35rem;
+}
+
+/* Vilendesign 3D Lens / Coin Component */
+.research-coin-stage {
+  perspective: 1200px;
+}
+
+.research-coin {
+  width: 240px;
+  height: 240px;
+  transform-style: preserve-3d;
+  transition: transform 0.6s cubic-bezier(0.22, 1, 0.36, 1);
+  position: relative;
+}
+
+@media (min-width: 640px) {
+  .research-coin {
+    width: 280px;
+    height: 280px;
+  }
+}
+
+@media (min-width: 1024px) {
+  .research-coin {
+    width: 320px;
+    height: 320px;
+  }
+}
+
+.research-coin:hover {
+  transform: translateY(-8px) rotateX(8deg) rotateY(-8deg);
+}
+
+.coin-echo {
+  position: absolute;
+  inset: 0;
+  border-radius: 9999px;
+  border: 1px solid var(--border);
+  background: var(--accent-wash);
+  transition: opacity 0.5s ease, transform 0.5s ease;
+}
+
+.coin-echo-1 {
+  transform: translateZ(-30px) translateY(16px) scale(0.96);
+  opacity: 0.7;
+}
+
+.coin-echo-2 {
+  transform: translateZ(-60px) translateY(32px) scale(0.92);
+  opacity: 0.4;
+}
+
+.coin-echo-3 {
+  transform: translateZ(-90px) translateY(48px) scale(0.88);
+  opacity: 0.2;
+}
+
+.research-coin:hover .coin-echo-1 {
+  transform: translateZ(-40px) translateY(24px) scale(0.98);
+  opacity: 0.85;
+}
+
+.research-coin:hover .coin-echo-2 {
+  transform: translateZ(-80px) translateY(48px) scale(0.95);
+  opacity: 0.55;
+}
+
+.coin-face {
+  position: absolute;
+  inset: 0;
+  border-radius: 9999px;
+  background: var(--surface-overlay);
+  border: 1px solid var(--glass-border);
+  box-shadow: var(--glass-shadow), var(--glass-inner);
+  transform: translateZ(30px);
+  overflow: hidden;
+  backdrop-filter: blur(16px) saturate(1.6);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.coin-sheen {
+  position: absolute;
+  inset: 0;
+  border-radius: 9999px;
+  pointer-events: none;
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.35) 0%, rgba(255, 255, 255, 0.05) 30%, transparent 60%),
+              radial-gradient(circle at 50% 30%, rgba(56, 189, 248, 0.15) 0%, transparent 70%);
+}
+
+/* Glass & Tile Cards */
+.vilen-card {
+  background: var(--glass-tint-strong);
+  border: 1px solid var(--glass-border);
+  box-shadow: var(--glass-shadow), var(--glass-inner);
+  backdrop-filter: blur(14px) saturate(1.6);
+  border-radius: var(--radius-lg);
+  transition: transform 0.28s cubic-bezier(0.22, 1, 0.36, 1), border-color 0.2s ease, box-shadow 0.28s ease;
+}
+
+.vilen-card:hover {
+  border-color: var(--accent);
+  box-shadow: 0 16px 40px rgba(0, 0, 0, 0.45), var(--glass-inner);
+}
+
+.vilen-pill {
+  border-radius: var(--radius-full);
+  background: var(--glass-tint-strong);
+  border: 1px solid var(--glass-border);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.25), var(--glass-inner);
+  backdrop-filter: blur(16px) saturate(1.6);
+}
+
+/* Semantic Status & Audit Badges (color-mix powered for rock-solid alpha) */
+.badge-crimson {
+  background-color: color-mix(in srgb, var(--accent-crimson) 12%, transparent);
+  border-color: color-mix(in srgb, var(--accent-crimson) 35%, transparent);
+  color: var(--accent-crimson);
+}
+.badge-emerald {
+  background-color: color-mix(in srgb, var(--accent-emerald) 12%, transparent);
+  border-color: color-mix(in srgb, var(--accent-emerald) 35%, transparent);
+  color: var(--accent-emerald);
+}
+.badge-amber {
+  background-color: color-mix(in srgb, var(--accent-amber) 12%, transparent);
+  border-color: color-mix(in srgb, var(--accent-amber) 35%, transparent);
+  color: var(--accent-amber);
+}
+.badge-azure {
+  background-color: color-mix(in srgb, var(--accent) 12%, transparent);
+  border-color: color-mix(in srgb, var(--accent) 35%, transparent);
+  color: var(--accent);
+}
+.badge-violet {
+  background-color: color-mix(in srgb, var(--accent-violet) 12%, transparent);
+  border-color: color-mix(in srgb, var(--accent-violet) 35%, transparent);
+  color: var(--accent-violet);
+}
+
+/* Tinted Panels */
+.panel-crimson {
+  background-color: color-mix(in srgb, var(--accent-crimson) 8%, var(--surface-elevated));
+  border-color: color-mix(in srgb, var(--accent-crimson) 35%, transparent);
+}
+.panel-emerald {
+  background-color: color-mix(in srgb, var(--accent-emerald) 8%, var(--surface-elevated));
+  border-color: color-mix(in srgb, var(--accent-emerald) 35%, transparent);
+}
+.panel-amber {
+  background-color: color-mix(in srgb, var(--accent-amber) 8%, var(--surface-elevated));
+  border-color: color-mix(in srgb, var(--accent-amber) 35%, transparent);
+}
+.panel-azure {
+  background-color: color-mix(in srgb, var(--accent) 8%, var(--surface-elevated));
+  border-color: color-mix(in srgb, var(--accent) 35%, transparent);
+}
+
+/* Background grid */
+.bg-subtle-grid {
+  background-size: 40px 40px;
+  background-image: 
+    linear-gradient(to right, var(--ui-hairline) 1px, transparent 1px),
+    linear-gradient(to bottom, var(--ui-hairline) 1px, transparent 1px);
+}
+
+/* ── Scroll-Driven Entrance Animations ── */
+.anim-initial {
+  opacity: 0;
+  transform: translateY(24px);
+  transition: opacity 0.7s cubic-bezier(0.22, 1, 0.36, 1),
+              transform 0.7s cubic-bezier(0.22, 1, 0.36, 1);
+  will-change: opacity, transform;
+}
+
+.anim-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Stagger item base */
+.stagger-item {
+  opacity: 0;
+  transform: translateY(16px);
+  transition: opacity 0.5s cubic-bezier(0.22, 1, 0.36, 1),
+              transform 0.5s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.stagger-item.anim-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* ── Modal & Panel Animations ── */
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes zoomIn95 {
+  from { opacity: 0; transform: scale(0.95); }
+  to { opacity: 1; transform: scale(1); }
+}
+
+@keyframes slideInFromBottom {
+  from { opacity: 0; transform: translateY(12px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.animate-in {
+  animation-fill-mode: both;
+  animation-duration: 200ms;
+  animation-timing-function: cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.fade-in {
+  animation-name: fadeIn;
+}
+
+.zoom-in-95 {
+  animation-name: zoomIn95;
+}
+
+.slide-in-from-bottom-3 {
+  animation-name: slideInFromBottom;
+}
+
+/* ── Reduced Motion ── */
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+
+  .anim-initial {
+    opacity: 1;
+    transform: none;
+  }
+
+  .stagger-item {
+    opacity: 1;
+    transform: none;
+  }
+
+  .research-coin:hover {
+    transform: none;
+  }
+}
+
+/* ── Print Stylesheet ── */
+@media print {
+  body {
+    background: white !important;
+    color: black !important;
+    font-size: 11pt;
+  }
+
+  header, .fixed, footer, .vilen-pill,
+  [class*="bg-subtle-grid"],
+  .research-coin-stage,
+  button[aria-label="Toggle"] {
+    display: none !important;
+  }
+
+  .vilen-card {
+    background: white !important;
+    border: 1px solid #ddd !important;
+    box-shadow: none !important;
+    backdrop-filter: none !important;
+    break-inside: avoid;
+  }
+
+  a[href]::after {
+    content: " (" attr(href) ")";
+    font-size: 9pt;
+    color: #666;
+  }
+
+  /* Show resume modal content without overlay */
+  .print-resume-body {
+    position: static !important;
+    background: white !important;
+    color: black !important;
+    max-height: none !important;
+    overflow: visible !important;
+  }
 }
