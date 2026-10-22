@@ -1,36 +1,49 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Krishnakumar Mandal — portfolio interface
 
-## Getting Started
+A Next.js/React presentation site for project dossiers, experiment notes and contact links. This repository is the **portfolio UI**, not the Mini-R1 training implementation or Nullius evaluation harness.
 
-First, run the development server:
+[View deployed site](https://portfolio-five-alpha-65.vercel.app/) · [Mini-R1 source](https://github.com/krishmannadal/mini-r1) · [Nullius source](https://github.com/krishmannadal/Nullius)
+
+**TypeScript · Next.js 16 · React 19 · Tailwind CSS 4 · Lucide**
+
+## Implemented
+
+The single-page interface includes project dossiers, expandable research notes, light/dark switching, interactive model-concept illustrations, a resume modal and an “Ask the Lab” component. The latter reads a local Q&A dataset; this repository has no live LLM chat backend. Illustrations are explanatory UI, not runtime measurements of a GPU or model.
+
+Project content lives in `src/data/`; presentation components in `src/components/`; the App Router entry, metadata and styles in `src/app/`. There is no database or model checkpoint in this application.
+
+## Run locally
+
+Use Node.js **20.9+** (Next.js 16 baseline) and npm:
 
 ```bash
+git clone https://github.com/krishmannadal/portfolio.git
+cd portfolio
+npm ci
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Open `http://localhost:3000`. For a production build:
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+```bash
+npm run build
+npm start
+```
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+No application environment variables or API credentials are required. Fonts are loaded through `next/font/google`, so building requires font-download access. The production build passed during the 23 October 2026 documentation audit. The deployed landing page also loaded; linked projects and all interactive flows were not fully tested.
 
-## Learn More
+## Content accuracy backlog
 
-To learn more about Next.js, take a look at the following resources:
+The deployed site contains older assertions that should be corrected before using it as the primary research evidence:
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+- Mini-R1's source/release configuration is **width 512, 8 heads, vocabulary 8,000**. Some portfolio copy says 384/6 or 8,192.
+- The 50%-versus-25% replay comparison changes composition and dose. It does not confirm that composition dominates dose.
+- “Within stochastic variance” requires repeated-run evidence; one seed per arm does not estimate variance.
+- Some skill/project entries refer to repositories not exposed as public evidence in this audit. Do not infer verified implementation from a portfolio label.
+- `metadataBase` and OpenGraph URL use a different domain from the observed Vercel deployment.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+These are recorded as content issues; this documentation-only branch does not change application behavior or page content. Read the linked source reports/configurations for technical facts. Next: reconcile the data files with those sources, qualify personal-role labels, and add verified working demo links.
 
-## Deploy on Vercel
+## Credits and licensing
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+Portfolio for Krishnakumar Mandal; repository commits use the author name `krish956`. No repository-level license file is present; no license is added by this update.
