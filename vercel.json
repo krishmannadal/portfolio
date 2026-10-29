@@ -1,0 +1,10 @@
+{
+  "$schema": "https://openapi.vercel.sh/vercel.json",
+  "redirects": [
+    {
+      "source": "/",
+      "destination": "/dragon-atlas/index.html",
+      "permanent": false
+    }
+  ]
+}
